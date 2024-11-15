@@ -21,7 +21,8 @@ const Form = () => {
     e.preventDefault();
     try {
       await login(credentials);
-      navigate("/user");
+      navigate("/profile");
+      window.location.reload();
     } catch (error) {
       setError("Échec de la connexion. Veuillez vérifier vos informations.");
       console.log(error);

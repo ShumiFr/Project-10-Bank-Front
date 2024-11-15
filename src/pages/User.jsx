@@ -1,10 +1,26 @@
-/* eslint-disable react/prop-types */
-
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchUserProfile } from "../store/userSlice";
 import Account from "../components/Account";
 
-const User = ({ user }) => {
+const User = () => {
+  const dispatch = useDispatch();
+  const { user, loading, error } = useSelector((state) => state.user);
+
+  useEffect(() => {
+    dispatch(fetchUserProfile());
+  }, [dispatch]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Erreur: {error}</div>;
+  }
+
   if (!user) {
-    return <div>Loading...</div>; // Afficher un message de chargement si l'utilisateur n'est pas encore disponible
+    return <div>Aucun utilisateur connecté.</div>;
   }
 
   return (
@@ -15,7 +31,6 @@ const User = ({ user }) => {
           <br />
           {user.firstName} {user.lastName}!
         </h1>
-        <button className="edit-button">Edit Name</button>
       </div>
       <h2 className="sr-only">Accounts</h2>
       <Account
