@@ -36,7 +36,7 @@ const Header = () => {
           <a className="header-nav__item" href="/profile">
             <i className="fa fa-user"></i> {user.firstName}
           </a>
-          <button className="header-nav__item" onClick={handleLogout}>
+          <button className="header-nav__item__button" onClick={handleLogout}>
             <i className="fa fa-sign-out"></i> Logout
           </button>
         </div>

@@ -30,6 +30,25 @@
     margin-right: 0.5rem;
   }
 
+  .header-nav__item__button {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    background: #fff;
+    text-decoration: none;
+    margin-right: 0.5rem;
+    border: 0;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  .header-nav__item__button:hover {
+    background: #fff;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
   .header-nav__item:hover {
     text-decoration: underline;
   }

@@ -1,0 +1,30 @@
+.form {
+  &__input-zone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__input {
+    background: #fff;
+    border: 1px solid;
+    padding: 10px;
+    margin: 5px;
+  }
+
+  &__button-zone {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+  }
+
+  &__button {
+    background: #fff;
+    color: #00bc77;
+    border: 1px solid #00bc77;
+    width: 100px;
+    padding: 5px 0;
+  }
+}
