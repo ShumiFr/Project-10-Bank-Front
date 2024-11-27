@@ -42,7 +42,7 @@ const Header = () => {
         </div>
       ) : (
         <div>
-          <a className="header-nav__item" href="/profile">
+          <a className="header-nav__item" href="/login">
             <i className="fa fa-user-circle"></i> Sign In
           </a>
         </div>
