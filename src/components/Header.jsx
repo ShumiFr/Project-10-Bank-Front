@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchUserProfile, logout } from "../store/userSlice";
+import { logout } from "../store/userSlice";
+import { fetchUserProfile } from "../services/fetchUserProfile";
 import logo from "../assets/argentBankLogo.png";
 
 const Header = () => {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchUserProfile } from "../store/userSlice";
+import { fetchUserProfile } from "../services/fetchUserProfile";
 import Account from "../components/Account";
 import { editForm, cancelEdit } from "../store/FormSlice";
 import { updateUserProfile } from "../services/userService";
@@ -48,11 +48,12 @@ const User = () => {
     const updatedLastName = newLastName || user.lastName;
 
     try {
-      // dispatcher comme fetchUserProfile apres avoir thunk updateUserProfile
-      updateUserProfile({
-        firstName: updatedFirstName,
-        lastName: updatedLastName,
-      });
+      dispatch(
+        updateUserProfile({
+          firstName: updatedFirstName,
+          lastName: updatedLastName,
+        })
+      );
     } catch (error) {
       console.error(
         "Erreur lors de la mise à jour du profil utilisateur:",
